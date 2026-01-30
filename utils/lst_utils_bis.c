@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   lst_utils_bis.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: madufeal <madufeal@student.42.fr>          +#+  +:+       +#+        */
+/*   By: tchemin <tchemin@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/08 14:39:35 by tchemin           #+#    #+#             */
-/*   Updated: 2026/01/28 14:46:27 by madufeal         ###   ########.fr       */
+/*   Updated: 2026/01/30 21:27:32 by tchemin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ void	add_front_lst(t_list **lst, t_list *new)
 	*lst = new;
 }
 
-t_list	*new_lst(int nbr, char name, int origin, int last_index)
+t_list	*new_lst(int nbr, char name, int last_index)
 {
 	t_list	*new;
 
@@ -34,7 +34,6 @@ t_list	*new_lst(int nbr, char name, int origin, int last_index)
 		return (NULL);
 	new->next = NULL;
 	new->prev = NULL;
-	new->origin = origin;
 	new->last_index = last_index;
 	new->name = name;
 	new->nb = nbr;
