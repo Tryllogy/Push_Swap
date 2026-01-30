@@ -6,7 +6,7 @@
 /*   By: madufeal <madufeal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/05 16:27:19 by tchemin           #+#    #+#             */
-/*   Updated: 2026/01/28 14:13:38 by madufeal         ###   ########.fr       */
+/*   Updated: 2026/01/30 20:42:22 by madufeal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,8 +44,24 @@ int	swap(t_list **lst, t_bench *bench)
 
 void	d_swap(t_list *a, t_list *b, t_bench *bench)
 {
-	if (!swap(&a, bench))
+	int	tmp;
+
+	tmp = bench->to_print;
+	if (bench->to_print)
+		ft_printf("ss\n", 1);
+	bench->to_print = 0;
+	if (!swap(a, bench))
+	{
 		(*bench).sa--;
-	if (swap(&b, bench))
+		(*bench).total--;
+	}
+	if (!swap(b, bench))
+	{
 		(*bench).sb--;
+		(*bench).total--;
+	}
+	(*bench).total++;
+	(*bench).ss++;
+	bench->to_print = tmp;
 }
+

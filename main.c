@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tchemin <tchemin@student.42lyon.fr>        +#+  +:+       +#+        */
+/*   By: madufeal <madufeal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/05 16:14:28 by tchemin           #+#    #+#             */
-/*   Updated: 2026/01/28 17:42:33 by tchemin          ###   ########.fr       */
+/*   Updated: 2026/01/30 13:59:20 by madufeal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,7 +67,7 @@ int	parse_arg(t_list **a, t_list **b, int argc, char **argv)
 	init_bench(&bench, *a);
 	(*a) = choose_alg(argv[i - 1], *a, *b, &bench);
 	if (argv[2] && ft_strcmp(argv[1], "--bench") == 0)
-		benchmark(&bench, argv[2]);
+		benchmark(&bench, argv[i - 1]);
 	return (1);
 }
 

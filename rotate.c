@@ -6,7 +6,7 @@
 /*   By: madufeal <madufeal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/06 10:49:38 by tchemin           #+#    #+#             */
-/*   Updated: 2026/01/28 14:14:09 by madufeal         ###   ########.fr       */
+/*   Updated: 2026/01/30 20:43:13 by madufeal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,8 +41,24 @@ int	rotate(t_list **lst, t_bench *bench)
 
 void	d_rotate(t_list **a, t_list **b, t_bench *bench)
 {
+	int	tmp;
+
+	tmp = bench->to_print;
+	if (bench->to_print)
+		ft_printf("rr\n", 1);
+	bench->to_print = 0;
 	if (!rotate(a, bench))
+	{
 		(*bench).ra--;
+		(*bench).total--;
+	}
 	if (!rotate(b, bench))
+	{
 		(*bench).rb--;
+		(*bench).total--;
+	}
+	(*bench).total++;
+	(*bench).rr++;
+	bench->to_print = tmp;
 }
+
