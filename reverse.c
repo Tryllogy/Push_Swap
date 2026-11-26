@@ -60,5 +60,3 @@ void	d_reverse(t_list **a, t_list **b, t_bench *bench)
 	(*bench).rrr++;
 	bench->to_print = tmp;
 }
-
-

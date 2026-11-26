@@ -27,7 +27,7 @@ int	swap(t_list **lst, t_bench *bench)
 {
 	t_list	*tmp;
 
-	if (!(*lst)->next || !(*lst))
+	if (!*lst || !(*lst)->next)
 		return (1);
 	print_swap((*lst)->name, bench);
 	*lst = first_lst((*lst));
@@ -42,7 +42,7 @@ int	swap(t_list **lst, t_bench *bench)
 	return (0);
 }
 
-void	d_swap(t_list *a, t_list *b, t_bench *bench)
+void	d_swap(t_list **a, t_list **b, t_bench *bench)
 {
 	int	tmp;
 
@@ -64,4 +64,3 @@ void	d_swap(t_list *a, t_list *b, t_bench *bench)
 	(*bench).ss++;
 	bench->to_print = tmp;
 }
-

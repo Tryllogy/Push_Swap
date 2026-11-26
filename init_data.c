@@ -16,7 +16,6 @@ t_list	*init_list(t_list *lst, char *to_atoi)
 {
 	t_list		*new;
 	int			*nbr;
-	static int	index = 0;
 
 	while (has_numbers(to_atoi))
 	{
@@ -27,7 +26,7 @@ t_list	*init_list(t_list *lst, char *to_atoi)
 				free(nbr);
 			return (clear_lst(lst));
 		}
-		new = new_lst(*nbr, 'a', index++, -1);
+		new = new_lst(*nbr, 'a', -1);
 		if (!new)
 			return (clear_lst(lst));
 		add_back_lst(&lst, new);

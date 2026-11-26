@@ -74,7 +74,7 @@ int					verif_duplicate(t_list *lst, int *nbr);
 int					print_error(t_list *a, t_list *b);
 
 int					swap(t_list **lst, t_bench *bench);
-void				d_swap(t_list *a, t_list *b, t_bench *bench);
+void				d_swap(t_list **a, t_list **b, t_bench *bench);
 int					push(t_list **lst, t_list **lst_pushed_into,
 						t_bench *bench);
 int					rotate(t_list **lst, t_bench *bench);

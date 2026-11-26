@@ -61,4 +61,3 @@ void	d_rotate(t_list **a, t_list **b, t_bench *bench)
 	(*bench).rr++;
 	bench->to_print = tmp;
 }
-
